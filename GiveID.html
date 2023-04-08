@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>GiveID</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="form-v6">
+	<div class="page-content">
+		<div class="form-v6-content">
+			<div id="qre" class="form-left">
+				<!-- <img src="images/form-v6.jpg" alt="form"> -->
+			</div>
+			<form id="form" class="form-detail" onsubmit="return false;">
+				<h2>Welcome to GiveID</h2>
+				<div class="form-row">
+					<input type="text" name="name" id="name" class="input-text" placeholder="Your Name">
+				</div>
+				<div class="form-row">
+					<input type="email" name="email" id="email" class="input-text" placeholder="Email Address">
+				</div>
+				<div class="form-row">
+					<input type="number" name="contact" id="contact" class="input-text" placeholder="Contact">
+				</div>
+				<div class="form-row">
+					<input type="text" name="address" id="address" class="input-text" placeholder="Address">
+				</div>
+				<div class="form-row-last">
+					<input type="submit" name="QR" class="register" value="Generate QR" onclick="gQR()">
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<script>
+		function gQR(){
+			var name = document.getElementById('name').value;
+			var email = document.getElementById('email').value;
+			var contact = document.getElementById('contact').value;
+			var address = document.getElementById('address').value;
+			var url ="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=Name:"+ name+" Email:"+email+" Contact:"+contact+" Address:"+address;
+			var ifr =`<iframe src="${url}" height = "200" width="200"></iframe>`;
+			document.getElementById('qre').innerHTML = ifr;
+		}
+	</script>
+</body>
+</html>
