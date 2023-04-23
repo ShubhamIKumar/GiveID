@@ -19,19 +19,19 @@
 			<form id="form" class="form-detail" onsubmit="return false;">
 				<h2>Welcome to GiveID</h2>
 				<div class="form-row">
-					<input type="text" name="name" id="name" class="input-text" placeholder="Your Name" required>
+					<input type="text" name="name" id="name" class="input-text" placeholder="Your Name">
 				</div>
 				<div class="form-row">
-					<input type="email" name="email" id="email" class="input-text" placeholder="Email Address" required>
+					<input type="email" name="email" id="email" class="input-text" placeholder="Email Address">
 				</div>
 				<div class="form-row">
-					<input type="number" name="contact" id="contact" class="input-text" placeholder="Contact" required>
+					<input type="number" name="contact" id="contact" class="input-text" placeholder="Contact">
 				</div>
 				<div class="form-row">
-					<input type="text" name="address" id="address" class="input-text" placeholder="Address" required>
+					<input type="text" name="address" id="address" class="input-text" placeholder="Address">
 				</div>
 				<div class="form-row-last">
-					<input type="submit" name="QR" id ="QR" class="register" value="Generate QR" onclick="gQR()" disabled>
+					<input type="submit" name="QR" class="register" value="Generate QR" onclick="gQR()">
 				</div>
 			</form>
 		</div>
@@ -48,22 +48,5 @@
 			document.getElementById('qre').innerHTML = ifr;
 		}
 	</script>
-	<script>
-		var name = document.getElementById('name');
-		var email = document.getElementById('email');
-		var contact = document.getElementById('contact');
-		var address = document.getElementById('address');
-		let button = document.getElementById('QR');
-		button.disabled = true;
-		input.addEventListener("change", stateHandle);
-		
-		function stateHandle() {
-			if(document.getElementById('name').value === "" && document.getElementById('email').value === "" && document.getElementById('contact').value === "" && document.getElementById('address').value === "") {
-				button.disabled = true;
-			} else {
-				button.disabled = false;
-			}
-		}
-		</script>
 </body>
 </html>
