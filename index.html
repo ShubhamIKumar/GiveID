@@ -31,7 +31,7 @@
 					<input type="text" name="address" id="address" class="input-text" placeholder="Address" required>
 				</div>
 				<div class="form-row-last">
-					<input type="submit" name="QR" class="register" value="Generate QR" onclick="gQR()" required>
+					<input type="submit" name="QR" class="register" value="Generate QR" onclick="gQR()" >
 				</div>
 			</form>
 		</div>
@@ -48,5 +48,19 @@
 			document.getElementById('qre').innerHTML = ifr;
 		}
 	</script>
+	<script>
+		let input = document.querySelector(".form-row");
+		let button = document.querySelector("form-row-last");
+		button.disabled = true;
+		input.addEventListener("change", stateHandle);
+		
+		function stateHandle() {
+			if(document.querySelector(".input").value === "") {
+				button.disabled = true;
+			} else {
+				button.disabled = false;
+			}
+		}
+		</script>
 </body>
 </html>
